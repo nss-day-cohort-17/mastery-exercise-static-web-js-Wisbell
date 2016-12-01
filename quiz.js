@@ -40,7 +40,7 @@ var the_tree = {
     char: ""
 }
 
-console.log(the_tree);
+//console.log(the_tree);
 
 function tree () {
 
