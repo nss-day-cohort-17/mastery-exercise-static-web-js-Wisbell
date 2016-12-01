@@ -36,8 +36,8 @@ Grow your tree
 
 var the_tree = {
 
-        height: 0,
-        char: ""
+    height: 0,
+    char: ""
 }
 
 console.log(the_tree);
