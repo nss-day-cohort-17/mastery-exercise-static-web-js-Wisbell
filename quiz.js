@@ -67,12 +67,12 @@ function tree (tree) {
 
 
     var tree_decrement = the_tree.height;
-    var space = " ";
+    var tree_space = " ";
 
 
     for (var i = 1; i < the_tree.height + 1; i++) {
 
-        console.log(space.repeat(tree_decrement - 1) + the_tree.char.repeat(i))
+        console.log(tree_space.repeat(tree_decrement - 1) + the_tree.char.repeat(i) + the_tree.char.repeat(the_tree.height - tree_decrement));
 
         //console.log(the_tree.char.repeat(i))
 
