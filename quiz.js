@@ -1,8 +1,10 @@
+/* --------------------------------- */
 /* Don't merge untill you are told to*/
 /* --------------------------------- */
 
 
 // Finish by Monday?
+
 
 /*
 Create a tree function that should build a pine tree out of a
@@ -40,8 +42,21 @@ var the_tree = {
     char: ""
 }
 
-//console.log(the_tree);
 
-function tree () {
+
+
+function tree (tree) {
+    console.log("Tree Function Called");
+
+
+    // Get height input value and store it
+    the_tree.height = document.querySelector('input[class="height_input_field"]').value
+
+
+    // Get char input value and store it
+    the_tree.char = document.querySelector('input[class="char_input_field"]').value
+
 
 }
+
+tree(the_tree);
