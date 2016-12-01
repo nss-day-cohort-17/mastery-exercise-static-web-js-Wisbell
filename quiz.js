@@ -21,6 +21,7 @@ A key that specifies which character to use to build the pine tree.
 The character to use should be from user input in a <input type="text">
 field in the DOM.
 
+
 Once the user enters in a number, and a character, the user can either
 then just press the enter key (as long as the cursor is in one of the
 input fields), or click a button that is labeled "Grow your tree" and
@@ -50,11 +51,25 @@ function tree (tree) {
 
 
     // Get height input value and store it
-    the_tree.height = document.querySelector('input[class="height_input_field"]').value
+    the_tree.height = document.querySelector('input[class="height_input_field"]').value;
+
+    console.log(the_tree.height);
 
 
     // Get char input value and store it
-    the_tree.char = document.querySelector('input[class="char_input_field"]').value
+    the_tree.char = document.querySelector('input[class="char_input_field"]').value;
+
+    console.log(the_tree.char);
+
+    // Testing making the tree
+    the_tree.height = 3;
+    the_tree.char = "*";
+
+
+    for (var i = 0; i < the_tree.height; i++) {
+        console.log()
+    }
+
 
 
 }
