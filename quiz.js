@@ -53,34 +53,19 @@ function tree (tree) {
     // Get height input value and store it
     the_tree.height = document.querySelector('input[class="height_input_field"]').value;
 
-    //console.log(the_tree.height);
-
-
     // Get char input value and store it
     the_tree.char = document.querySelector('input[class="char_input_field"]').value;
-
-    //console.log(the_tree.char);
-
-    // Testing making the tree
-    the_tree.height = 10;
-    the_tree.char = "*";
-
 
     var tree_decrement = the_tree.height;
     var tree_space = " ";
 
+    console.clear();
 
-    for (var i = 1; i < the_tree.height + 1; i++) {
+    for (var i = 1; i < the_tree.height; i++) {
 
-        console.log(tree_space.repeat(tree_decrement - 1) + the_tree.char.repeat(i) + the_tree.char.repeat(the_tree.height - tree_decrement));
-
-        //console.log(the_tree.char.repeat(i))
+        console.log(tree_space.repeat(tree_decrement - 1) + the_tree.char.repeat(i) + the_tree.char.repeat(the_tree.height - tree_decrement))
 
         tree_decrement--
-
-        //the_tree.height = the_tree.height - 1;
-
-        //console.log(the_tree.char.repeat(i));
 
     }
 
