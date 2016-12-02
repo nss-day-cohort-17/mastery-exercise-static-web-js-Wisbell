@@ -37,7 +37,7 @@ Grow your tree
     var tree_height_input_field = document.querySelector('input[class="height_input_field"]');
     tree_height_input_field.addEventListener('keypress', function(keyboard_event){
         if (keyboard_event.keyCode == 13) {
-            tree(the_tree);
+            tree(get_tree_specs());
         }
     });
 
@@ -46,8 +46,7 @@ Grow your tree
     var tree_char_input_field = document.querySelector('input[class="char_input_field"]');
      tree_char_input_field.addEventListener('keypress', function(keyboard_event){
         if (keyboard_event.keyCode == 13) {
-            //tree();
-            tree(the_tree);
+            tree(get_tree_specs());
         }
     });
 
@@ -55,49 +54,77 @@ Grow your tree
     // Add event listener to grow button
 
     var grow_button = document.querySelector('input[name="make_tree"]');
-    grow_button.addEventListener('click', tree);
+
+    grow_button.addEventListener('click', function(){
+        tree(get_tree_specs())});
 
 
-// Mah beautiful tree
-var the_tree = {
+    /* Notes */
 
-    height: 0,
-    char: ""
-}
+    /*
+
+    make separate get_tree_specs function
+
+    return that function as an argument
+
+    // the mouse event click listener was recieving new height and char properties
+
+    */
 
 
-function tree (tree) {
-    //console.log("Tree Function Called");
+
+function get_tree_specs () {
+    var tree = {}
 
     // Get height input value and store it
     //the_tree.height = document.querySelector('input[class="height_input_field"]').value;
 
     tree.height = document.querySelector('input[class="height_input_field"]').value;
 
-
     // Get char input value and store it
     //the_tree.char = document.querySelector('input[class="char_input_field"]').value;
     tree.char = document.querySelector('input[class="char_input_field"]').value;
 
+    return tree;
+}
+
+
+function tree (tree_specs) {
+    console.log("Tree Function Called");
 
     // Check to see if height and char inputs have values
 
-    if (tree.height === '' || tree.char === '') {
+    if (tree_specs.height === '' || tree_specs.char === '') {
         alert('Both fields must have a value to make a tree.')
         return false;
     }
 
     else {
 
-        var tree_decrement = tree.height;
+        var tree_decrement = tree_specs.height;
         var tree_space = " ";
 
         // Clear console to make more trees
         console.clear();
 
-        for (var i = 0; i < tree.height; i++) {
+        // Figure out colors
+        //console.log('%cHello World','background:green;color:#fff')
+        //console.log('%c' + tree_space, 'background:green')
 
-            console.log(tree_space.repeat(tree_decrement - 1) + tree.char.repeat(i + 1) + tree.char.repeat(tree.height - tree_decrement))
+        for (var i = 0; i < tree_specs.height; i++) {
+
+            if (i === 0) {
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:yellow');
+            }
+            else if (i % 2) {
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:blue');
+            }
+            else if (i % 3) {
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:tomato');
+            }
+            else {
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:goldenrod');
+            }
 
             tree_decrement--;
 
@@ -108,3 +135,35 @@ function tree (tree) {
 }
 
 // tree(the_tree);
+
+/* --------- Notes to future self --------------- */
+/*
+
+
+    Break down functions into their simplest form and separate them
+
+        get tree specs
+
+        make the tree
+
+
+    When using event handlers, make sure you dont add additional properties to them
+        if you are using objects as arguments
+
+
+    Use the debugger tools more often to pin point problems with your code
+
+
+
+    http://stackoverflow.com/questions/7505623/colors-in-javascript-console
+
+    //for custom colored text
+    console.log('%cHello World','color:blue');
+    //here blue could be replaced by any color code
+
+    //for custom colored text with custom background text
+    console.log('%cHello World','background:red;color:#fff')
+
+
+
+*/
