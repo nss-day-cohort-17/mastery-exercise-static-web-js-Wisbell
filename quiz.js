@@ -49,28 +49,38 @@ var the_tree = {
 function tree (tree) {
     //console.log("Tree Function Called");
 
-
     // Get height input value and store it
     the_tree.height = document.querySelector('input[class="height_input_field"]').value;
+
 
     // Get char input value and store it
     the_tree.char = document.querySelector('input[class="char_input_field"]').value;
 
-    var tree_decrement = the_tree.height;
-    var tree_space = " ";
 
-    console.clear();
+    // Check to see if height and char inputs have values
 
-    for (var i = 1; i < the_tree.height; i++) {
+    if (the_tree.height === '' || the_tree.char === '') {
+        alert('Both fields must have a value to make a tree.')
+        return false;
+    }
 
-        console.log(tree_space.repeat(tree_decrement - 1) + the_tree.char.repeat(i) + the_tree.char.repeat(the_tree.height - tree_decrement))
+    else {
 
-        tree_decrement--
+        var tree_decrement = the_tree.height;
+        var tree_space = " ";
+
+        console.clear();
+
+        for (var i = 1; i < the_tree.height; i++) {
+
+            console.log(tree_space.repeat(tree_decrement - 1) + the_tree.char.repeat(i) + the_tree.char.repeat(the_tree.height - tree_decrement))
+
+            tree_decrement--;
+
+        }
 
     }
 
-
-
 }
 
-tree(the_tree);
+// tree(the_tree);
