@@ -41,13 +41,23 @@ Grow your tree
 
 // Add event listeners to inputs
 
-    // Get height input value and store it
+    // event listener for height field for enter key
     var tree_height_input_field = document.querySelector('input[class="height_input_field"]');
-    //tree_height_input_field.addEventListener('');
+    tree_height_input_field.addEventListener('keypress', function(keyboard_event){
+        if (keyboard_event.keyCode == 13) {
+            tree();
+        }
+    });
 
 
-    // Get char input value and store it
+    // event listener for character field for enter key
     var tree_char_input_field = document.querySelector('input[class="char_input_field"]');
+     tree_char_input_field.addEventListener('keypress', function(keyboard_event){
+        if (keyboard_event.keyCode == 13) {
+            tree();
+        }
+    });
+
 
     // Add event listener to grow button
 
