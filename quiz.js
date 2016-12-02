@@ -37,13 +37,30 @@ Grow your tree
 
 */
 
+
+
+// Add event listeners to inputs
+
+    // Get height input value and store it
+    var tree_height_input_field = document.querySelector('input[class="height_input_field"]');
+    //tree_height_input_field.addEventListener('');
+
+
+    // Get char input value and store it
+    var tree_char_input_field = document.querySelector('input[class="char_input_field"]');
+
+    // Add event listener to grow button
+
+    var grow_button = document.querySelector('input[name="make_tree"]');
+    grow_button.addEventListener('click', tree);
+
+
+// Mah beautiful tree
 var the_tree = {
 
     height: 0,
     char: ""
 }
-
-
 
 
 function tree (tree) {
