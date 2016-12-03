@@ -111,19 +111,24 @@ function tree (tree_specs) {
         //console.log('%cHello World','background:green;color:#fff')
         //console.log('%c' + tree_space, 'background:green')
 
+        var css_yellow = 'background:green;color:yellow;';
+        var css_blue = 'background:green;color:blue';
+        var css_tomato = 'background:green;color:tomato';
+        var css_goldenrod = 'background:green;color:goldenrod';
+
         for (var i = 0; i < tree_specs.height; i++) {
 
             if (i === 0) {
-                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:yellow');
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), css_yellow);
             }
             else if (i % 2) {
-                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:blue');
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), css_blue);
             }
             else if (i % 3) {
-                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:tomato');
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), css_tomato);
             }
             else {
-                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), 'background:green;color:goldenrod');
+                console.log(tree_space.repeat(tree_decrement - 1) + '%c' +  tree_specs.char.repeat(i + 1) + tree_specs.char.repeat(tree_specs.height - tree_decrement), css_goldenrod);
             }
 
             tree_decrement--;
